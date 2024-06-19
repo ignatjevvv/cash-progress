@@ -1,0 +1,1 @@
+export const goalData = JSON.parse(localStorage.getItem('data')) || [];

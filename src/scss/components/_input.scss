@@ -1,0 +1,39 @@
+/// INPUT 
+input {
+    width: auto;
+    height: 60px;
+    background: black;
+    border: 1px solid var(--border-radius-color);
+    padding: 0 1.2rem;
+    font-size: 1rem;
+}
+
+input::placeholder {
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: #4C4C4C;
+    font-weight: 300;
+}
+
+input[type="radio"] {
+    display: none;
+    /* Скрыть стандартные радиокнопки */
+}
+
+input[type="radio"]:checked {
+    border-color: #007bff;
+    /* Цвет рамки при выборе */
+}
+
+// Remove arrows/spinner from input value number
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+input,
+textarea {
+    color: #E3FF73;
+}

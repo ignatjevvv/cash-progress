@@ -1,0 +1,53 @@
+.statistic {
+    z-index: 1;
+    width: 100%;
+    left: 0;
+    padding: 0 1.25rem;
+    position: fixed;
+    transition: stroke 5s ease;
+
+    &__container {
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+        height: 150px;
+        background-color: #E3FF73;
+        margin-top: 3rem;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-radius: 2rem;
+        border: 2px solid #E3FF73;
+    }
+
+    &__data {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    &__count {
+        font-size: 5rem;
+        font-family: "Manrope", sans-serif;
+        font-weight: 600;
+    }
+
+    &__item {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+    }
+
+    &__description {
+        font-size: 1.4rem;
+        font-family: "Manrope", sans-serif;
+    }
+}
+
+.scroll {
+    transition: stroke 0.3s ease;
+    background: none;
+    backdrop-filter: blur(20px);
+    border: 2px solid #E3FF76;
+    color: #E3FF73;
+}

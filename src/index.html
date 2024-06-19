@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Remix Icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+      integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Style -->
+    <!-- <link rel="stylesheet" href="assets/css/styles.css" /> -->
+    <title>Cash Progress</title>
+  </head>
+  <body>
+    <main>
+      <!--====================== MAIN ======================-->
+      <div class="container">
+        <!--====================== STATISTIC ======================-->
+        <section class="statistic" id="statistic">
+          <div class="statistic__container">
+            <button
+              class="btn large-btn"
+              id="new-goal-item"
+              type="button"
+            >
+              New goal
+            </button>
+
+            <div class="statistic__data">
+              <div class="statistic__item">
+                <span class="statistic__count" id="number-goals">0</span>
+                <p class="statistic__description">Total</p>
+              </div>
+              <div class="statistic__item">
+                <span class="statistic__count" id="remaining-target">0</span>
+                <p class="statistic__description">In Progress</p>
+              </div>
+              <div class="statistic__item">
+                <span class="statistic__count" id="complete-goals">0</span>
+                <p class="statistic__description">Completed</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="goal" id="goal-list">
+          <div class="goal__container" id="goal-container">
+            <div class="line"></div>
+            <div class="goal__list" id="goal-lists"></div>
+          </div>
+        </section>
+
+        <section class="dialog">
+          <dialog id="dialog">
+            <div class="dialog__container">
+              <h1 class="dialog__title">New goal</h1>
+              <div class="dialog__history hide" id="history-list"></div>
+
+              <form class="dialog__form" id="form-dialog" method="dialog">
+                <div class="dialog__data">
+                  <label for="dialog__name">Name your goal</label>
+                  <input
+                    class="dialog__input"
+                    id="dialog-name"
+                    type="text"
+                    placeholder="Name of your target"
+                    minlength="1"
+                    required
+                  />
+                </div>
+
+                <div class="dialog__data">
+                  <label for="dialog__initial">Initial value</label>
+                  <input
+                    class="dialog__input"
+                    id="dialog-initial"
+                    type="number"
+                    placeholder="Initial value"
+                    minlength="1"
+                  />
+                </div>
+
+                <div class="dialog__data">
+                  <label for="dialog__amount">Goal amount</label>
+                  <input
+                    class="dialog__input"
+                    id="dialog-amount"
+                    type="number"
+                    placeholder="Amount of your target"
+                    minlength="1"
+                    required
+                  />
+                </div>
+
+                <div class="dialog__data">
+                  <label>Type of currency</label>
+                  <div class="dialog__currency">
+                    <label
+                      for="dialog__currency-usd"
+                      class="dialog__currency-option"
+                    >
+                      <div class="dialog__currency-label">$</div>
+                      <input
+                        id="dialog__currency-usd"
+                        type="radio"
+                        name="currency"
+                        value="USD"
+                        required
+                      />
+                    </label>
+                    <label
+                      for="dialog__currency-eur"
+                      class="dialog__currency-option"
+                    >
+                      <div class="dialog__currency-label">€</div>
+                      <input
+                        id="dialog__currency-eur"
+                        type="radio"
+                        name="currency"
+                        value="EUR"
+                        required
+                      />
+                    </label>
+                    <label
+                      for="dialog__currency-uah"
+                      class="dialog__currency-option"
+                    >
+                      <div class="dialog__currency-label">₴</div>
+                      <input
+                        id="dialog__currency-uah"
+                        type="radio"
+                        name="currency"
+                        value="UAH"
+                        required
+                      />
+                    </label>
+                    <label
+                      for="dialog__currency-bit"
+                      class="dialog__currency-option"
+                    >
+                      <div class="dialog__currency-label">B</div>
+                      <input
+                        id="dialog__currency-bit"
+                        type="radio"
+                        name="currency"
+                        value="BTC"
+                        required
+                      />
+                    </label>
+                  </div>
+                </div>
+              </form>
+
+              <div class="button__menu">
+                <button class="btn small-btn close" id="close-button">
+                  Discard
+                </button>
+
+                <button
+                  class="btn large-btn"
+                  id="button"
+                  form="form-dialog"
+                  type="submit"
+                >
+                  Create goal
+                </button>
+              </div>
+            </div>
+          </dialog>
+        </section>
+      </div>
+    </main>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

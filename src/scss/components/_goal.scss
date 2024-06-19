@@ -1,0 +1,290 @@
+.goal {
+    font-family: "Manrope";
+    padding-top: 15rem;
+
+    &__list {
+        display: grid;
+        flex-wrap: wrap;
+        gap: 4rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    &__inform {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    &__task {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 350px;
+        width: 100%;
+        border: 2px solid #E3FF73;
+        border-radius: 2rem;
+        color: #E3FF73;
+        padding: 2rem;
+        overflow: hidden;
+    }
+
+    &__title {
+        font-size: 42px;
+    }
+
+    &__data {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-content: space-between;
+        height: 150px;
+        width: 100%;
+        margin: 2rem 0rem 2rem 0rem;
+        gap: 2rem;
+    }
+
+    &__progress {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 128px;
+        font-weight: 700;
+        margin: auto;
+        position: relative;
+        align-items: baseline;
+    }
+
+    &__calculate {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 145px;
+        width: 100%;
+        border: 2px solid #E3FF73;
+        border-radius: 1rem;
+        background: gray;
+        overflow: hidden;
+    }
+
+    &__wrap {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        padding: 0 .5rem;
+    }
+
+    &__button {
+        display: flex;
+        border-top: 2px solid;
+    }
+
+    &__statistic {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 250px;
+        gap: 2rem;
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            &:nth-last-child(3),
+            &:last-child {
+                align-items: flex-end;
+            }
+        }
+
+        &-amount {
+            font-weight: 600;
+        }
+
+        &-name {
+            font-weight: 400;
+            font-family: "Manrope";
+            opacity: .5;
+        }
+
+    }
+
+    &__amount {
+        height: 70px;
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    /* DROPDOWN MENU */
+    &__dropdown {
+        position: absolute;
+        right: 30px;
+
+        &-button {
+            border: none;
+            display: flex;
+            gap: 0.4rem;
+            background: none;
+            width: max-content;
+            cursor: pointer;
+        }
+
+        &-dot {
+            height: 7px;
+            width: 7px;
+            background: #E3FF73;
+            border-radius: 100%;
+        }
+
+        &-menu {
+            top: 2rem;
+            right: 0;
+            position: absolute;
+            z-index: 1;
+            width: max-content;
+            padding: 1rem 1.5rem;
+
+            display: grid;
+            row-gap: 1.5rem;
+            border: solid 1px;
+            border-radius: 0.75rem;
+            backdrop-filter: blur(10px);
+            transform: scale(0.1);
+            transform-origin: 8rem -2rem;
+            pointer-events: none;
+            transition:
+                opacity 0.4s,
+                transform 0.4s;
+            opacity: 0;
+        }
+
+        &-item {
+            display: flex;
+            align-items: center;
+            column-gap: 0.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        &-item:hover {
+            color: black;
+        }
+
+        &-icon {
+            font-size: 1.4rem;
+        }
+
+        /* SHOW DROPDOWN MENU */
+
+        .show-dropdown &-menu {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: initial;
+        }
+    }
+
+    /* SHOW DIALOG WINDOW WHEN CLICK REMOVE GOAL */
+    &__dialog {
+        position: absolute;
+        background: rgb(0, 0, 0);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        padding: 3rem;
+        top: 0;
+        left: 0;
+
+        &-message {
+            font-size: 2rem;
+        }
+
+        &-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    /* ANIMATION */
+    /* SHOW CALCULATE AND STATISTIC DATA */
+    .hiden {
+        height: 0;
+        opacity: 0;
+        transition: 0.2s all;
+    }
+
+    &__progress,
+    .hiden {
+        transition: 0.2s all;
+    }
+
+    &__inform {
+        overflow: hidden;
+    }
+
+    &__task:hover &__progress {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    &__task:hover .hiden {
+        transform: translateY(-200px);
+        opacity: 1;
+    }
+
+    /* HOVER COLOR FROM GOAL CARDS */
+
+    &__task:hover {
+        background: #E3FF73;
+        color: black;
+    }
+
+    &__task:hover &__dialog {
+        color: #E3FF73;
+        ;
+    }
+
+    &__task:hover &__dropdown-dot {
+        background: black;
+    }
+
+    &__task:hover .line {
+        stroke: black;
+        /* измените на нужный цвет при наведении */
+    }
+
+    &__task:hover .button__minus {
+        border-right: 1px solid #3a3939;
+    }
+}
+
+
+.svg-container {
+    position: absolute;
+}
+
+.hide {
+    display: none;
+}
+
+span.percent {
+    font-size: 42px;
+    line-height: 1;
+}
+
+span.percent-progress {
+    font-size: 42px;
+    font-weight: 600;
+}
+
+
+.svg-container .line {
+    transition: stroke 0.3s ease;
+}
+
+
+.opacity-card {
+    opacity: 0.3;
+    // filter: grayscale(1);
+}
