@@ -77,7 +77,12 @@
 
     &__button {
         display: flex;
-        border-top: 2px solid;
+        // border-top: 2px solid;
+        button:hover {
+            transition: all .3s;
+            background: white;
+            color: black;
+        }
     }
 
     &__statistic {
