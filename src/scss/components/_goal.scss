@@ -22,9 +22,9 @@
         flex-direction: column;
         height: 350px;
         width: 100%;
-        border: 2px solid #E3FF73;
+        border: 2px solid var(--first-color);
         border-radius: 2rem;
-        color: #E3FF73;
+        color: var(--first-color);
         padding: 2rem;
         overflow: hidden;
     }
@@ -60,7 +60,7 @@
         justify-content: space-between;
         height: 145px;
         width: 100%;
-        border: 2px solid #E3FF73;
+        border: 2px solid var(--first-color);
         border-radius: 1rem;
         background: gray;
         overflow: hidden;
@@ -132,7 +132,7 @@
         &-dot {
             height: 7px;
             width: 7px;
-            background: #E3FF73;
+            background: var(--first-color);
             border-radius: 100%;
         }
 
@@ -236,12 +236,12 @@
     /* HOVER COLOR FROM GOAL CARDS */
 
     &__task:hover {
-        background: #E3FF73;
+        background: var(--first-color);
         color: black;
     }
 
     &__task:hover &__dialog {
-        color: #E3FF73;
+        color: var(--first-color);
         ;
     }
 

@@ -6,10 +6,21 @@
 
 /*=============== VARIABLES CSS ===============*/
 :root {
+    --hue: 72;
+    --sat: 100%;
+    --lig: 73%;
+
+    /*========== Colors ==========*/
+
+    /* HSL Colore mode */
+    --first-color: hsl(var(--hue), var(--sat), var(--lig));
     --background-color: #000000;
     --border-radius-color: #3a3939;
     --color-icon-button: #3a3939;
 
     /* BUTTON */
-    --button-hover-color: #E3FF73;
+    --button-hover-color: hsl(var(--hue), var(--sat), var(--lig));
+
+    /* FONT */
+    --body-font: "Manrope", sans-serif;
 }

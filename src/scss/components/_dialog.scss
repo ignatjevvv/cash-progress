@@ -10,7 +10,7 @@
         min-height: 700px;
         padding: 2rem 2.5rem;
         border-radius: 1.5rem;
-        border: 1px solid #0C0C0C;
+        border: 2px solid var(--first-color);
     }
 
     &__title {
@@ -111,6 +111,6 @@
 }
 
 .active {
-    border: .3rem solid #E3FF73;
+    border: .3rem solid var(--first-color);
     transition: all .1s;
 }
