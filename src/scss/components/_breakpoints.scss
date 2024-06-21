@@ -39,6 +39,10 @@
             display: none;
         }
 
+        &__data {
+            display: none;
+        }
+
         .btn.large-btn {
             order: 2;
             /* Меняет порядок отображения на второй */
@@ -91,9 +95,9 @@
         }
     }
 
-    .btn {
-        width: 100%;
-    }
+    // .btn {
+    //     width: 100%;
+    // }
 }
 
 @media screen and (min-width: 1023px) and (max-width: 1440px) {

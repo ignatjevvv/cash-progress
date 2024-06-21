@@ -80,7 +80,7 @@
         // border-top: 2px solid;
         button:hover {
             transition: all .3s;
-            background: white;
+            background: var(--button-hover-color);
             color: black;
         }
     }
