@@ -7,6 +7,9 @@
     transition: stroke 5s ease;
 
     &__logo svg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         fill: black;
     }
 
@@ -30,7 +33,7 @@
     }
 
     &__count {
-        font-size: 5rem;
+        font-size: 3.75rem;
         font-weight: 600;
     }
 
