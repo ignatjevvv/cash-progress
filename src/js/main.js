@@ -7,9 +7,9 @@ import { radioButtonInstance } from './modules/radioButton.js';
 import { goalData } from './modules/goalDada.js';
 import { animation } from './modules/animation.js';
 import { currentGoal } from './modules/state.js';
+import { checkFormRadio } from './modules/checkForm.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  
   animation();
   renderListGoal('goal-lists', goalData, currencyList);
   openModalWindow('dialog');
@@ -22,15 +22,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const goalInitialValue = document.getElementById('dialog-initial');
 
   const goalFormStart = document.getElementById('form-dialog');
-  goalFormStart.addEventListener('submit', () => {
-    addNewGoal(
-      goalData,
-      currentGoal,
-      goalNameInput,
-      goalAmountInput,
-      goalInitialValue,
-    );
+  const buttonNewGoal = document.getElementById('button');
+  const dialogWindows = document.getElementById('dialog');
+
+  buttonNewGoal.addEventListener('click', () => {
+    if (goalFormStart.reportValidity()) {
+      dialogWindows.close();
+      addNewGoal(
+        goalData,
+        currentGoal,
+        goalNameInput,
+        goalAmountInput,
+        goalInitialValue,
+      );
+    } else {
+      checkFormRadio();
+    }
   });
+
+  // goalFormStart.addEventListener('submit', (e) => {
+  //   // addNewGoal(
+  //   //   goalData,
+  //   //   currentGoal,
+  //   //   goalNameInput,
+  //   //   goalAmountInput,
+  //   //   goalInitialValue,
+  //   // );
+  // });
 
   // if (!goalData.length) {
   //   dialogWindows.showModal();

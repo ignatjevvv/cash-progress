@@ -30,7 +30,7 @@ class DropdownMenu {
 
   closeDropdowmMenu() {
     const dropdownItems = document.querySelectorAll('.goal__dropdown-name');
-    console.log(dropdownItems);
+    // console.log(dropdownItems);
     dropdownItems.forEach(item => {
       item.addEventListener('click', () => {
         const dropdown = item.closest(`.${this.dropdownClass}`);
