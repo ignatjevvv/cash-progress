@@ -1,0 +1,33 @@
+.error {
+    &__container {
+        border: 2px solid orangered;
+        border-radius: 1rem;
+        position: absolute;
+        height: 130px;
+        right: -20px;
+        left: -20px;
+        margin: auto;
+        animation: anim-vibrate 3s linear infinite;
+    }
+
+    &__text {
+        position: absolute;
+        background-color: black;
+        left: 0;
+        right: 0;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        color: orangered;
+        font-weight: 500;
+        bottom: -10px;
+    }
+}
+
+
+@keyframes anim-vibrate {
+    50% {
+        opacity: .1;
+    }
+}
