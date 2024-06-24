@@ -31,9 +31,10 @@ export const addNewGoal = (
   };
 
   if (dataArrIndex === -1) {
-    for (let i = 0; i < 20; i++) {
-      goalData.unshift(goalObj);
-    }
+    goalData.unshift(goalObj);
+    // for (let i = 0; i < 20; i++) {
+    //   goalData.unshift(goalObj);
+    // }
   } else {
     goalData[dataArrIndex] = goalObj;
   }

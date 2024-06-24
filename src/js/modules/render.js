@@ -155,7 +155,7 @@ function assignEventHandlers() {
 
   document.querySelectorAll('[data-action="remove-goal"]').forEach(removeBtn => {
     removeBtn.addEventListener('click', e => {
-      removeGoal(e.target.closest('.goal__task'));
+      removeGoal(e.target.closest('.goal__task').id);
     });
   });
 
@@ -163,14 +163,12 @@ function assignEventHandlers() {
   document.querySelectorAll('[data-action="edit"]').forEach(editBtn => {
     editBtn.addEventListener('click', e => {
       editeGoal(e.target.closest('.goal__task').id);
-      console.log(e.target.closest('.goal__task').id);
     });
   });
 
   document.querySelectorAll('[data-action="history"]').forEach(historyBtn => {
     historyBtn.addEventListener('click', e => {
       showHistory(e.target.closest('.goal__task').id);
-      console.log(e.target.closest('.goal__task').id);
     });
   });
 

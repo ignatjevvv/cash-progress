@@ -5,7 +5,7 @@ import { currencyList } from './currencyList.js';
 import { reset } from './reset.js';
 
 export const removeGoal = goalID => {
-  console.log('Remove item ' + goalID);
+  console.log(goalID);
   const indexItem = goalData.findIndex(item => item.id === goalID);
   goalData.splice(indexItem, 1);
   saveDataLocalStorage(goalData);
