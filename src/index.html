@@ -101,7 +101,23 @@
           <dialog id="dialog">
             <div class="dialog__container">
               <h1 class="dialog__title">New goal</h1>
-              <div class="dialog__history hide" id="history-list"></div>
+              <div class="dialog__history hide" id="history">
+                <table class="scrolldown">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Current</th>
+                      <th>Type</th>
+                    </tr>
+                  </thead>
+  
+                  <tbody id="history-list">
+  
+                  </tbody>
+                </table>
+              </div>
+
+
 
               <form class="dialog__form" id="form-dialog" method="dialog">
                 <div class="dialog__data">

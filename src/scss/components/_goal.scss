@@ -40,7 +40,11 @@
         height: 150px;
         width: 100%;
         margin: 2rem 0rem 2rem 0rem;
-        gap: 2rem;
+        gap: 1rem;
+    }
+
+    &__data.complete {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
     }
 
     &__progress {

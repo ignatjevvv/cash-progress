@@ -1,5 +1,5 @@
 /* For small devices */
-@media screen and (min-width: 320px) and (max-width: 992px){
+@media screen and (min-width: 320px) and (max-width: 992px) {
     .container {
         padding-left: 1.25rem;
         padding-right: 1.25rem;
@@ -56,6 +56,7 @@
 
     .goal {
         padding-top: 9rem;
+
         &__list {
             grid-template-columns: repeat(1, minmax(0, 1fr));
             gap: 2rem;
@@ -82,13 +83,22 @@
             height: 500px;
         }
 
+        &__task.complete:hover {
+            height: 280px;
+        }
+
         &__task:hover &__progress {
             height: 0;
             margin: 0;
         }
 
+        &__wrap.complete {
+            transform: translateY(100px);
+        }
+
         &__dialog {
             padding: 2rem;
+
             &-buttons {
                 gap: 1rem;
             }
@@ -98,7 +108,11 @@
     // .btn {
     //     width: 100%;
     // }
+
+
 }
+
+
 
 @media screen and (min-width: 1023px) and (max-width: 1440px) {
     .goal {
@@ -110,7 +124,7 @@
 }
 
 
-@media screen and (min-width: 768px) and (max-width: 1023px) { 
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     .goal__list {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 2rem;
