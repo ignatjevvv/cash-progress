@@ -11,7 +11,7 @@ import { checkFormRadio } from './modules/checkForm.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   animation();
-  renderListGoal('goal-lists', goalData, currencyList);
+  renderListGoal('goal-list', goalData, currencyList);
   openModalWindow('dialog');
 
   radioButtonInstance.addClassActiveForRadio();

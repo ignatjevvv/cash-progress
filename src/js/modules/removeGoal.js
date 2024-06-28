@@ -9,7 +9,7 @@ export const removeGoal = goalID => {
   const indexItem = goalData.findIndex(item => item.id === goalID);
   goalData.splice(indexItem, 1);
   saveDataLocalStorage(goalData);
-  renderListGoal('goal-lists', goalData, currencyList);
+  renderListGoal('goal-list', goalData, currencyList);
 };
 
 export const dialogWindow = goalID => {

@@ -38,7 +38,7 @@ export const accumulateDeposit = (searchId, idBtn) => {
   recordTransactionHistory(sum, totalItem, typeOperation);
   checkCompletionStatus(totalItem);
   percentageToFinish(totalItem);
-  renderListGoal('goal-lists', goalData, currencyList);
+  renderListGoal('goal-list', goalData, currencyList);
   saveDataLocalStorage(goalData);
   console.log(goalData);
 };

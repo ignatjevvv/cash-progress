@@ -1,5 +1,4 @@
 .goal {
-    font-family: "Manrope";
     padding-top: 15rem;
 
     &__list {
@@ -51,7 +50,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 128px;
+        font-size: var(--large-font-size);
         font-weight: 700;
         margin: auto;
         position: relative;
@@ -81,7 +80,6 @@
 
     &__button {
         display: flex;
-        // border-top: 2px solid;
         button:hover {
             transition: all .3s;
             background: var(--button-hover-color);
@@ -107,7 +105,7 @@
         }
 
         &-amount {
-            font-weight: 600;
+            font-weight: var(--font-semi-bold);
         }
 
         &-name {
@@ -239,7 +237,7 @@
     }
 
     &__task:hover .hiden {
-        transform: translateY(-200px);
+        transform: translateY(-196px);
         opacity: 1;
     }
 
@@ -265,13 +263,17 @@
     }
 
     &__task:hover .button__minus {
-        border-right: 1px solid #3a3939;
+        border-right: 1px solid var(--border-radius-color);
     }
 }
 
 
 .svg-container {
     position: absolute;
+}
+
+.svg-container .line {
+    transition: stroke 0.3s ease;
 }
 
 .hide {
@@ -287,12 +289,6 @@ span.percent-progress {
     font-size: 42px;
     font-weight: 600;
 }
-
-
-.svg-container .line {
-    transition: stroke 0.3s ease;
-}
-
 
 .opacity-card {
     opacity: 0.3;

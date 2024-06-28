@@ -41,7 +41,7 @@ export const addNewGoal = (
 
   percentageToFinish(goalObj);
   saveDataLocalStorage(goalData);
-  renderListGoal('goal-lists', goalData, currencyList);
+  renderListGoal('goal-list', goalData, currencyList);
 
   /// MOVE TO ANOTHER FUNCTION (RESET)
   //   radioButtonInstance.removeClassActiveRadio();
