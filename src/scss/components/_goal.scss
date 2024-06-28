@@ -109,8 +109,6 @@
         }
 
         &-name {
-            font-weight: 400;
-            font-family: "Manrope";
             opacity: .5;
         }
 
@@ -250,7 +248,6 @@
 
     &__task:hover &__dialog {
         color: var(--first-color);
-        ;
     }
 
     &__task:hover &__dropdown-dot {
@@ -259,7 +256,6 @@
 
     &__task:hover .line {
         stroke: black;
-        /* измените на нужный цвет при наведении */
     }
 
     &__task:hover .button__minus {
@@ -287,10 +283,9 @@ span.percent {
 
 span.percent-progress {
     font-size: 42px;
-    font-weight: 600;
+    font-weight: var(--font-semi-bold);
 }
 
 .opacity-card {
     opacity: 0.3;
-    // filter: grayscale(1);
 }
