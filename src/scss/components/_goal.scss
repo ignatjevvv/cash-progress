@@ -21,7 +21,7 @@
         flex-direction: column;
         height: 350px;
         width: 100%;
-        border: 2px solid var(--first-color);
+        border: 2px solid var(--border-radius-alt-color);
         border-radius: 2rem;
         color: var(--first-color);
         padding: 2rem;
@@ -29,7 +29,7 @@
     }
 
     &__title {
-        font-size: 42px;
+        font-size: var(--medium-font-size-42);
     }
 
     &__data {
@@ -50,11 +50,17 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: var(--large-font-size);
+        font-size: var(--large-font-size-128);
         font-weight: 700;
         margin: auto;
         position: relative;
         align-items: baseline;
+    }
+
+    &__percent {
+        font-size: var(--medium-font-size-42);
+        line-height: 1;
+        color: var(--alt-color);
     }
 
     &__calculate {
@@ -80,6 +86,7 @@
 
     &__button {
         display: flex;
+
         button:hover {
             transition: all .3s;
             background: var(--button-hover-color);
@@ -105,7 +112,7 @@
         }
 
         &-amount {
-            font-weight: var(--font-semi-bold);
+            font-weight: var(--font-semi-bold-600);
         }
 
         &-name {
@@ -170,6 +177,10 @@
             column-gap: 0.5rem;
             cursor: pointer;
             transition: color 0.3s;
+
+            i {
+                color: var(--alt-color)
+            }
         }
 
         &-item:hover {
@@ -192,7 +203,7 @@
     /* SHOW DIALOG WINDOW WHEN CLICK REMOVE GOAL */
     &__dialog {
         position: absolute;
-        background: rgb(0, 0, 0);
+        background: var(--color-dialog-window);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -242,6 +253,7 @@
     /* HOVER COLOR FROM GOAL CARDS */
 
     &__task:hover {
+        border-color: var(--first-color);
         background: var(--first-color);
         color: black;
     }
@@ -274,16 +286,6 @@
 
 .hide {
     display: none;
-}
-
-span.percent {
-    font-size: 42px;
-    line-height: 1;
-}
-
-span.percent-progress {
-    font-size: 42px;
-    font-weight: var(--font-semi-bold);
 }
 
 .opacity-card {

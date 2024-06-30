@@ -1,6 +1,6 @@
 .error {
     &__container {
-        border: 2px solid orangered;
+        border: 2px solid var(--error-border-radius);
         border-radius: 1rem;
         position: absolute;
         height: 130px;
@@ -19,8 +19,8 @@
         margin-left: auto;
         margin-right: auto;
         text-align: center;
-        color: orangered;
-        font-weight: 500;
+        color: var(--error-text-color);
+        font-weight: var(--font-medium-500);
         bottom: -10px;
     }
 }

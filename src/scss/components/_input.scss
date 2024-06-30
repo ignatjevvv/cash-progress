@@ -5,7 +5,7 @@ input {
     background: black;
     border: 1px solid var(--border-radius-color);
     padding: 0 1.2rem;
-    font-size: 1rem;
+    font-size: var(--normal-font-size-16);
 }
 
 input:focus {
@@ -16,9 +16,9 @@ input:focus {
 
 input::placeholder {
     font-family: sans-serif;
-    font-size: 1rem;
+    font-size: var(--normal-font-size-16);
     color: #4C4C4C;
-    font-weight: 300;
+    font-weight: var(--font-light-300);
 }
 
 input[type="radio"] {

@@ -65,6 +65,8 @@
         &__data {
             grid-template-columns: repeat(1, minmax(0, 1fr));
             height: auto;
+            margin: 2.5rem 0rem 2.5rem 0rem;
+            gap: 2.5rem;
         }
 
         &__title {
@@ -102,6 +104,10 @@
             &-buttons {
                 gap: 1rem;
             }
+        }
+
+        &__calculate {
+            grid-row: 2;
         }
     }
 

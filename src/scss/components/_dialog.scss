@@ -13,9 +13,8 @@
     }
 
     &__title {
-        font-size: 2.2rem;
-        // font-family: Arial, sans-serif;
-        font-weight: 400;
+        font-size: var(--medium-font-size-32);
+        font-weight: var(--font-medium-400);
         color: white;
     }
 
@@ -60,19 +59,14 @@
         }
 
         &-label {
-            font-size: 1.4rem;
+            font-size: var(--medium-font-size-22)
         }
     }
 
     /// HISTORY LIST
     &__history {
-        // font-family: "Manrope", sans-serif;
         display: flex;
         flex-direction: column;
-        // gap: 1rem;
-        // height: 450px;
-        // position: relative;
-
 
         &-item {
             display: flex;
@@ -81,22 +75,15 @@
         }
 
         &-amount {
-            font-size: 2rem;
+            font-size: var(--medium-font-size-32);
         }
 
         &-date {
-            font-size: .8rem;
+            font-size: var(--small-font-size-10);
             display: flex;
             align-items: flex-start;
             flex-direction: column;
             color: dimgray;
-        }
-
-        &-icon {
-            i {
-                // font-size: 3.5rem;
-            }
-
         }
     }
 }
@@ -112,10 +99,7 @@
 
 table.scrolldown {
     width: 100%;
-
-    /* border-collapse: collapse; */
     border-spacing: 0;
-    // border: 2px solid rgb(100, 100, 100);
 }
 
 /* To display the block as level element */
@@ -142,14 +126,14 @@ table.scrolldown tbody {
 }
 
 thead {
-    border: 2px solid var(--first-color);
+    border: 2px solid var(--alt-color);
     border-top-right-radius: 1rem;
     border-top-left-radius: 1rem;
 }
 
 tbody {
     padding: 0 1rem;
-    border: 2px solid var(--first-color);
+    border: 2px solid var(--alt-color);
     border-top: none;
     border-bottom-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
@@ -161,14 +145,10 @@ thead th {
 }
 
 thead th:nth-of-type(1), th:nth-of-type(2)  {
-    border-right: 2px solid var(--first-color);
+    border-right: 2px solid var(--alt-color);
 }
 
 td {
     text-align: center;
     padding-top: 1rem;
-}
-
-tbody tr {
-    border-bottom: 1px solid hotpink;
 }
