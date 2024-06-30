@@ -18,7 +18,14 @@ class DropdownMenu {
       button.addEventListener('click', () => {
         const dropdown = button.closest(`.${this.dropdownClass}`);
         if (dropdown) {
-          dropdown.classList.toggle('show-dropdown');
+
+          if (dropdown.className.includes('show-dropdown')) {
+            dropdown.classList.remove('show-dropdown');
+          } else {
+            this.closeActiveDropdownMenu(dropdownButtons);
+            dropdown.classList.add('show-dropdown');
+          }
+
         } else {
           console.warn('No dropdown container found');
         }
@@ -30,12 +37,18 @@ class DropdownMenu {
 
   closeDropdowmMenu() {
     const dropdownItems = document.querySelectorAll('.goal__dropdown-name');
-    // console.log(dropdownItems);
+
     dropdownItems.forEach(item => {
       item.addEventListener('click', () => {
         const dropdown = item.closest(`.${this.dropdownClass}`);
         dropdown.classList.toggle('show-dropdown');
       });
+    });
+  }
+
+  closeActiveDropdownMenu(dropdownItems) {
+    dropdownItems.forEach(item => {
+      item.closest(`.${this.dropdownClass}`).classList.remove('show-dropdown');
     });
   }
 }
