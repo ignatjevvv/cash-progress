@@ -1,5 +1,7 @@
 import { radioButtonInstance } from './radioButton';
-const elementInmput = document.querySelectorAll('.dialog__data');
+
+const elementInput = document.querySelectorAll('.dialog__data');
+const goalFormStart = document.getElementById('form-dialog');
 
 export const checkFormRadio = () => {
   if (!radioButtonInstance.getActiveItemRadio()) {
@@ -18,13 +20,13 @@ const showErrorMessage = () => {
     </div>
     `;
 
-  const elFirst = elementInmput[0].querySelector('.dialog__input').value;
-  const elSecond = elementInmput[2].querySelector('.dialog__input').value;
+  const elFirst = elementInput[0].querySelector('.dialog__input').value;
+  const elSecond = elementInput[2].querySelector('.dialog__input').value;
   const errorElement = document.querySelector('.error');
 
   if (elFirst && elSecond && !errorElement) {
-    elementInmput[3].style.cssText = 'padding-bottom: 3rem;';
-    elementInmput[3].insertAdjacentHTML('afterbegin', errorMessageElement);
+    elementInput[3].style.cssText = 'padding-bottom: 3rem;';
+    elementInput[3].insertAdjacentHTML('afterbegin', errorMessageElement);
   }
 };
 
@@ -32,7 +34,31 @@ const removeErrorMessage = () => {
   const errorElement = document.querySelector('.dialog__data .error');
 
   if (errorElement) {
-    elementInmput[3].style.cssText = '';
+    elementInput[3].style.cssText = '';
     errorElement.remove();
   }
+};
+
+const goalAmountInput = document.getElementById('dialog-amount');
+const goalInitialValue = document.getElementById('dialog-initial');
+
+const checkAmountValue = () => {
+  if (goalAmountInput.value) {
+    if (goalInitialValue.value > goalAmountInput.value) {
+      alert('Initial value is bigger!');
+      return false;
+    } else {
+      return true;
+    }
+  }
+};
+
+export const checkForm = () => {
+  if (goalFormStart.reportValidity() && checkAmountValue()) {
+    return true;
+  } else {
+    checkFormRadio();
+    return false;
+  }
+  // return: true OR false;
 };
