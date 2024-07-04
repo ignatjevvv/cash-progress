@@ -1,4 +1,7 @@
 import { radioButtonInstance } from './radioButton.js';
+import { removeAllErrorMessage } from './checkForm.js';
+
+
 const goalFormStart = document.getElementById('form-dialog');
 const historyList = document.getElementById('history-list');
 const history = document.getElementById('history');
@@ -11,6 +14,7 @@ export const reset = () => {
   document.getElementById('form-dialog').reset();
 
   radioButtonInstance.removeClassActiveRadio();
+  removeAllErrorMessage();
   document.querySelector('.dialog__title').innerText = 'New goal';
   newGoalBtn.innerText = 'Create goal';
   closeBtn.innerText = 'Discard';

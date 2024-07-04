@@ -1,62 +1,97 @@
 import { radioButtonInstance } from './radioButton';
 
+const errorMsg = ['Select the currency', 'Initial value is bigger then amount'];
+
+const goalNameInput = document.getElementById('dialog-name');
+const goalAmountInput = document.getElementById('dialog-amount');
+const goalInitialInput = document.getElementById('dialog-initial');
+const goalCurrencyRadio = document.getElementById('dialog-currency');
+
 const elementInput = document.querySelectorAll('.dialog__data');
 const goalFormStart = document.getElementById('form-dialog');
 
+const arrElements = [goalInitialInput, goalCurrencyRadio];
+
 export const checkFormRadio = () => {
   if (!radioButtonInstance.getActiveItemRadio()) {
-    showErrorMessage();
+    showErrorMessage(
+      goalCurrencyRadio,
+      goalNameInput,
+      goalAmountInput,
+      errorMsg[0],
+    );
   } else {
-    removeErrorMessage();
+    removeErrorMessage(goalCurrencyRadio);
   }
 };
 
-const showErrorMessage = () => {
+const showErrorMessage = (
+  element,
+  checkElementOne,
+  checkElementTwo,
+  errorMessage,
+) => {
   const errorMessageElement = `
     <div class="error">
         <div class="error__container">
-            <div class="error__text"><p>Select the currency</p></div>
+            <div class="error__text"><p>${errorMessage}</p></div>
         </div>
     </div>
     `;
 
-  const elFirst = elementInput[0].querySelector('.dialog__input').value;
-  const elSecond = elementInput[2].querySelector('.dialog__input').value;
-  const errorElement = document.querySelector('.error');
+  const errorElement = element.closest('.dialog__data').querySelector('.error');
 
-  if (elFirst && elSecond && !errorElement) {
-    elementInput[3].style.cssText = 'padding-bottom: 3rem;';
-    elementInput[3].insertAdjacentHTML('afterbegin', errorMessageElement);
+  if (checkElementOne.value && checkElementTwo.value && !errorElement) {
+    // element.style.cssText = 'padding-bottom: 3rem;';
+    element
+      .closest('.dialog__data')
+      .insertAdjacentHTML('afterbegin', errorMessageElement);
   }
 };
 
-const removeErrorMessage = () => {
-  const errorElement = document.querySelector('.dialog__data .error');
+const removeErrorMessage = (...elements) => {
+  elements.forEach(element => {
+    const errorElement = element
+      .closest('.dialog__data')
+      .querySelector('.error');
 
-  if (errorElement) {
-    elementInput[3].style.cssText = '';
-    errorElement.remove();
-  }
-};
-
-const goalAmountInput = document.getElementById('dialog-amount');
-const goalInitialValue = document.getElementById('dialog-initial');
-
-const checkAmountValue = () => {
-  if (goalAmountInput.value) {
-    if (goalInitialValue.value > goalAmountInput.value) {
-      alert('Initial value is bigger!');
-      return false;
-    } else {
-      return true;
+    if (errorElement) {
+      element.style.cssText = '';
+      errorElement.remove();
     }
+  });
+};
+
+export const removeAllErrorMessage = () => {
+  removeErrorMessage(goalInitialInput, goalCurrencyRadio);
+}
+
+goalInitialInput.addEventListener('keyup', () => {
+  checkInputInitialValue();
+});
+
+/// Check initial input value;
+const checkInputInitialValue = () => {
+  if (+goalInitialInput.value > +goalAmountInput.value) {
+    showErrorMessage(
+      goalInitialInput,
+      goalInitialInput,
+      goalAmountInput,
+      errorMsg[1],
+    );
+
+    return false;
+  } else {
+    removeErrorMessage(goalInitialInput);
+    return true;
   }
 };
 
 export const checkForm = () => {
-  if (goalFormStart.reportValidity() && checkAmountValue()) {
+  if (goalFormStart.reportValidity() && checkInputInitialValue()) {
     return true;
   } else {
+    checkInputInitialValue();
     checkFormRadio();
     return false;
   }
